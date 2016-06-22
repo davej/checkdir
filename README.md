@@ -46,9 +46,9 @@ MIT © [DaveJ](https://twitter.com/DaveJ)
 
 [npm-image]: https://badge.fury.io/js/checkdir.svg
 [npm-url]: https://npmjs.org/package/checkdir
-[travis-image]: https://travis-ci.org/DaveJ/checkdir.svg
-[travis-url]: https://travis-ci.org/DaveJ/checkdir
-[coveralls-image]: https://coveralls.io/repos/DaveJ/checkdir/badge.svg?branch=master&service=github
-[coveralls-url]: https://coveralls.io/r/DaveJ/checkdir?branch=master
-[david_img]: https://david-dm.org/DaveJ/checkdir.svg
-[david_site]: https://david-dm.org/DaveJ/checkdir
+[travis-image]: https://travis-ci.org/davej/checkdir.svg
+[travis-url]: https://travis-ci.org/davej/checkdir
+[coveralls-image]: https://coveralls.io/repos/davej/checkdir/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/r/davej/checkdir?branch=master
+[david_img]: https://david-dm.org/davej/checkdir.svg
+[david_site]: https://david-dm.org/davej/checkdir
