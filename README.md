@@ -2,7 +2,6 @@
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
 [![Dependency Status][david_img]][david_site]
 
 > Check if dir exists, if it's empty and how many files are directly inside it.
@@ -26,6 +25,15 @@ checkdir('/some/test/dir').then(info => console.log(info));
 //    exists: true,
 //    files: 1
 // }
+
+// or assuming that the only file in the dir is a 'dotfile'
+checkdir('/some/test/dir', { ignoreDotFiles: true })
+  .then(info => console.log(info));
+//=> {
+//    empty: true,
+//    exists: true,
+//    files: 0
+// }
 ```
 
 
@@ -36,9 +44,17 @@ checkdir('/some/test/dir').then(info => console.log(info));
 #### directoryPath
 
 *Required*
-Type: `string`
+Type: `String`
 
 Path to directory.
+
+#### options
+
+##### ignoreDotFiles
+
+Type: `Boolean` (Default: `false`)
+
+Don't count files/folders that begin with the dot ('.') character, e.g.. '.git' or '.gitignore'.
 
 ## License
 
@@ -48,7 +64,5 @@ MIT © [DaveJ](https://twitter.com/DaveJ)
 [npm-url]: https://npmjs.org/package/checkdir
 [travis-image]: https://travis-ci.org/davej/checkdir.svg
 [travis-url]: https://travis-ci.org/davej/checkdir
-[coveralls-image]: https://coveralls.io/repos/davej/checkdir/badge.svg?branch=master&service=github
-[coveralls-url]: https://coveralls.io/r/davej/checkdir?branch=master
 [david_img]: https://david-dm.org/davej/checkdir.svg
 [david_site]: https://david-dm.org/davej/checkdir

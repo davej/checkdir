@@ -4,6 +4,7 @@ var chai = require('chai');
 var fs = require('fs');
 var chaiAsPromised = require('chai-as-promised');
 var rimraf = require('rimraf');
+var path = require('path');
 var checkdir = require('../');
 
 chai.use(chaiAsPromised);
@@ -37,6 +38,25 @@ describe('empty dirs', function () {
   });
   it('should work', function () {
     return checkdir(dirPath).should.eventually.deep.equal({
+      empty: true,
+      exists: true,
+      files: 0
+    });
+  });
+  after(function (done) {
+    return rimraf(dirPath, done);
+  });
+});
+
+describe('dir with dotfile', function () {
+  var dirPath = './test/bar';
+
+  before(function () {
+    fs.mkdirSync(dirPath);
+    return fs.writeFileSync(path.join(dirPath, '.dotfile.txt'), 'Hello', 'utf8');
+  });
+  it('should work', function () {
+    return checkdir(dirPath, { ignoreDotFiles: true }).should.eventually.deep.equal({
       empty: true,
       exists: true,
       files: 0

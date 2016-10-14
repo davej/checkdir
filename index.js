@@ -1,10 +1,18 @@
 'use strict';
 var fs = require('mz/fs');
 
-module.exports = function checkdir(dir) {
+module.exports = function checkdir(dir, options) {
   function isDirEmpty(files) {
-    var noOfFiles = files.length;
-    var empty = files.length === 0;
+    var filteredFiles;
+    var noOfFiles;
+    var empty;
+    if (options && options.ignoreDotFiles) {
+      filteredFiles = files.filter(function (file) {
+        return file.indexOf('.') !== 0;
+      });
+    }
+    noOfFiles = filteredFiles ? filteredFiles.length : files.length;
+    empty = noOfFiles === 0;
 
     return {
       empty: empty,
