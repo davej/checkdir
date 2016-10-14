@@ -1,6 +1,6 @@
 {
   "name": "checkdir",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Check if dir exists, if it's empty and how many files are directly inside it.",
   "license": "MIT",
   "repository": "DaveJ/checkdir",
